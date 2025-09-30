@@ -1,0 +1,38 @@
+project_root_path: /Users/achillejuniormbogoltouye/Documents/mlops_training_esme
+
+main:
+   pipeline_steps: all
+
+input_data:
+   input_csv_data_filepath: ${project_root_path}/datalake/raw_data/census.csv
+
+output_data:
+   output_clean_csv_filename: cleaned_data.csv
+
+splits_data_size:
+   test_size: 0.1 # default
+
+model_name:
+   sk_neural_network: MLPCLassifier
+   sk_logistic_regression: LogisticRegression
+
+model_params:
+   MLPCLassifier:
+       hidden_layer_sizes: (100,)
+       activation: relu
+       solver: adam
+       batch_size: auto
+       learning_rate: constant
+       learning_rate_init: 0.001
+       max_iter: 200
+       shuffle: True
+       random_state: 42
+       early_stopping: True
+   LogisticRegression:
+       penalty: l2
+       C: 1.0
+       random_state: 42
+       solver: lbfgs
+       max_iter: 200
+       n_jobs: -1
+      

@@ -1,0 +1,7 @@
+name: process_data
+
+python_env: venv.yaml
+
+entry_points:
+  main:
+    command: python run.py

@@ -1,0 +1,21 @@
+name: data_splits
+
+python_env: venv.yaml
+
+entry_points:
+    main:
+        parameters:
+            test_size:
+                description: value should be between 0.0 and 1.0 and represent the proportion of the dataset
+                type: float 
+                default: 0.1
+            filepath_to_csv_dataset:
+                description: The file path to raw csv dataset
+                type: str
+            dirpath_to_data_registry:
+                description: dir path to save output artifact file in your data registry (storage)
+                type: str 
+        command: |
+            dvc exp run -f -n split_data run.py  -S test_size={test_size} \
+                                                 -S filepath_to_csv_dataset ={filepath_to_csv_dataset_dataset} \
+                                                  S dirpath_to_data_registry={dirpath_to_data_registry}
