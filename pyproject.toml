@@ -1,14 +1,24 @@
 [project]
 name = "salary-classifier"
-version = "0.1.0"
-description = ""
+version = "1.0.0"
+license = "MIT"
+description = "ML pipeline for salary classification"
+keywords = ["scikit-learn", "Evidently", "github", "DVC", "mlflow"]
 authors = [
     {name = "TouyeAchille",email = "touyejunior@gmail.com"}
 ]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10,<3.13"
 dependencies = [
+    "mlflow (>=3.1.0,<4.0.0)",
+    "hydra-core (>=1.3.2,<2.0.0)",
+    "dvc (>=3.60.1,<4.0.0)",
+    "black (>=25.1.0,<26.0.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "tqdm (>=4.67.1,<5.0.0)"
+
 ]
+
 
 [tool.poetry]
 packages = [{include = "salary_classifier", from = "src"}]
