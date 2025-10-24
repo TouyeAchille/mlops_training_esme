@@ -1,7 +1,6 @@
-# This is the MLproject file configuration for the data cleaning stage of the pipeline.
-name: data_cleaning_stage
+name: preprocessing_step
 
-# The conda environment file for this stage
+# The conda environment 
 conda_env: conda.yaml
 
 # The entry points define how to run this stage.
@@ -12,8 +11,8 @@ entry_points:
                 description: The file path to raw csv dataset
                 type: path
             output_data:
-                description: The name of the output artifact file
-                type: str 
-        command: python run.py --input_data={input_data}  --output_data={output_data}
-        #dvc exp run -f -s -n data_cleaning  -S input_data={input_data} -S output_data={output_data} 
+                description: The name of the output data file with extension .csv
+                type: string 
+        command: python preprocessing.py --input_data={input_data}  --output_data={output_data}
+        
         
