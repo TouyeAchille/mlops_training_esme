@@ -21,7 +21,9 @@ dependencies = [
 
 
 [tool.poetry]
-packages = [{include = "salary_classifier", from = "src"}]
+packages = [{include = "salary_classifier"}
+
+]
 
 
 [build-system]
